@@ -13,10 +13,8 @@ Technologies Used:
 
 -Identity Framework for handling user authentication and role-based authorization.
 
--N-tier Architecture to ensure separation of concerns and better organization by splitting the application into different layers (UI, business logic, data access).
-
 -Stripe API integration to handle payment processing, allowing users to make secure purchases in the BookStore.
 
 -Dependency Injection to keep the application scalable and maintainable.
 
--Repository Pattern to encapsulate data access logic and promote separation of concerns.
+
