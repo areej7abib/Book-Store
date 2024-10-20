@@ -1,0 +1,88 @@
+﻿
+body {
+    background-color: #e6d7c1; /* Beige-like background */
+    color: #5e5b52; /* Softer text color for better contrast */
+}
+
+.btn-outline-primary {
+    color: #5e5b52; /* Button text color */
+    border-color: #5e5b52; /* Button border color */
+}
+
+    .btn-outline-primary:hover {
+        background-color: #d1c0a8; /* Button background on hover */
+        color: #ffffff; /* Button text color on hover */
+    }
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.book-cover {
+    transition: all 0.3s ease;
+}
+
+    .book-cover:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+.view-details a:hover {
+    background-color: #5e5b52; /* تغيير لون الخلفية */
+    color: #ffffff; /* تغيير لون النص */
+}
+.animated-title {
+    color: #5e5b52; /* لون العنوان */
+    font-size: 2.5em; /* حجم الخط */
+    animation: fadeIn 1.5s ease-in-out; /* تأثير الظهور */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* ظل النص */
+    margin-bottom: 20px; /* المسافة السفلية */
+}
+
+
+.view-details-btn {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .view-details-btn:hover {
+        background-color: #5e5b52; /* لون الخلفية عند التمرير */
+        color: #fff; /* لون النص عند التمرير */
+        border-color: #5e5b52; /* لون حدود الزر عند التمرير */
+    }
+.card-header {
+    background-color: #8e7f71; /* Darker header color */
+    color: #ffffff; /* White text for contrast */
+}
+
+.card-body {
+    background-color: #f8f5f0; /* Softer beige background */
+    color: #5e5b52; /* Darker text color for readability */
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #9e8979, #8e7f71); /* Add a gradient to the buttons */
+    border: none;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background: #8e7f71; /* Darker color on hover */
+    }
+
+h3, h6 {
+    color: #5e5b52; /* Consistent text color for headers */
+}
+
+.text-warning {
+    color: #b38b67; /* Make the 'warning' text darker for better visibility */
+}
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .navbar-nav .nav-item {
+            margin-bottom: 10px;
+        }
+
+            .navbar-nav .nav-item:last-child {
+                margin-bottom: 0;
+            }

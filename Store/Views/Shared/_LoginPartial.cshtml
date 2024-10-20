@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav d-flex align-items-center">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item me-3">
+            <a id="manage" class="nav-link custom-manage-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Welcome, @UserManager.GetUserName(User)!</a>
+        </li>
+        <li class="nav-item">
+            <form id="logoutForm" class="custom-logout-form d-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="btn custom-logout-btn">Sign Out</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item me-3">
+            <a class="nav-link custom-link-btn" id="register" asp-area="Identity" asp-page="/Account/Register">Join Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link custom-link-btn" id="login" asp-area="Identity" asp-page="/Account/Login">Sign In</a>
+        </li>
+    }
+</ul>
+
+<style>
+    /* Custom styles for the nav links and form buttons */
+    .custom-manage-link {
+        color: #f8f5f0;
+        background-color: #5a5a58;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-transform: capitalize;
+        transition: all 0.3s ease;
+    }
+
+    .custom-manage-link:hover {
+        background-color: #8e7f71;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
+
+    .custom-logout-btn, .custom-link-btn {
+        color: #ffffff;
+        background-color: #8e7f71;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .custom-link-btn {
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    .custom-logout-btn:hover, .custom-link-btn:hover {
+        background-color: #a08978;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Custom logout form styling */
+    .custom-logout-form {
+        display: inline;
+        margin: 0;
+    }
+
+    /* Flexbox alignment and margin adjustments */
+    .navbar-nav .nav-item {
+        margin-right: 15px;
+    }
+
+    .navbar-nav .nav-item:last-child {
+        margin-right: 0;
+    }
+
+    /* Responsive design */
+ 
+    }
+</style>

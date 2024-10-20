@@ -1,0 +1,161 @@
+﻿@model ShoppingCart
+<form method="post">
+    <input hidden asp-for="ProductId" />
+    <div class="card shadow border-0 mt-4">
+        <div class="card-header bg-secondary bg-gradient text-light py-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="text-white text-uppercase">@Model.Product.Title</h3>
+                    <p class="text-white-50 fw-semibold mb-0">by @Model.Product.Author</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body" style="background-color: #f8f5f0; color: #5e5b52;">
+            <div class="py-3">
+                <div class="row">
+                    <div class="col-6 col-md-2 offset-lg-1 pb-1">
+                        <a asp-action="Index" class="btn custom-btn mb-5 text-uppercase">
+                            <small>Back to home</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
+                        <img src="@Model.Product.ImageUrl" width="100%" class="rounded" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1">
+                        <div class="col-12 col-md-6 pb-4">
+                            <span class="badge" style="background-color: #8e7f71; color: white;">@Model.Product.Category.Name</span>
+                        </div>
+                        <div class="row ps-2">
+                            <h6 style="color: #8e7f71;">ISBN : @Model.Product.ISBN</h6>
+                        </div>
+                        <div class="row ps-2">
+                            <h6 class="pb-2">
+                                List Price:
+                                <span class="text-decoration-line-through">@Model.Product.ListPrice</span>
+                            </h6>
+                        </div>
+                        <div class="row text-center ps-2">
+                            <div class="p-1 col-3 col-lg-2 border-bottom">
+                                <div style="color: #8e7f71; font-weight: bold;">Quantity</div>
+                            </div>
+                            <div class="p-1 col-3 col-lg-2 border-bottom">
+                                <div style="color: #8e7f71; font-weight: bold;">1-50</div>
+                            </div>
+                            <div class="p-1 col-3 col-lg-2 border-bottom">
+                                <div style="color: #8e7f71; font-weight: bold;">51-100</div>
+                            </div>
+                            <div class="p-1 col-3 col-lg-2 border-bottom">
+                                <div style="color: #8e7f71; font-weight: bold;">100+</div>
+                            </div>
+                        </div>
+                        <div class="row text-center ps-2">
+                            <div class="p-1 col-3 col-lg-2 text-warning fw-bold">
+                                <div>Price</div>
+                            </div>
+                            <div class="p-1 col-3 col-lg-2 text-warning fw-bold">
+                                <div>@Model.Product.Price</div>
+                            </div>
+                            <div class="p-1 col-3 col-lg-2 text-warning fw-bold">
+                                <div>@Model.Product.Price50</div>
+                            </div>
+                            <div class="p-1 col-3 col-lg-2 text-warning fw-bold">
+                                <div>@Model.Product.Price100</div>
+                            </div>
+                        </div>
+                        <div class="row pl-2 my-3 ">
+                            <p class="lh-sm">@Model.Product.Description</p>
+                        </div>
+                        <div class="row pl-2 mb-3">
+                            <div class="col-md-4">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text custom-count-btn fw-semibold"
+                                          id="inputGroup-sizing-default">
+                                        Count
+                                    </span>
+                                    <input asp-for="Count" type="number" value="1" class="form-control text-end"
+                                           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="border-left: 1px solid #8e7f71;" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6 pb-1">
+                                <button type="submit" class="btn custom-add-btn w-100 py-2 text-uppercase fw-semibold">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<style>
+    .card-header {
+        background-color: #8e7f71;
+        color: #ffffff;
+    }
+
+    /* Custom Button Styles */
+    .custom-btn {
+        background: #5e5b52;
+        color: #ffffff;
+        border: 2px solid transparent;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+        .custom-btn:hover {
+            background: #ffffff;
+            color: #5e5b52;
+            border: 2px solid #5e5b52;
+        }
+
+    .custom-add-btn {
+        background: linear-gradient(45deg, #9e8979, #8e7f71);
+        color: #ffffff;
+        border: none;
+        transition: background 0.3s ease;
+    }
+
+        .custom-add-btn:hover {
+            background: #5e5b52;
+        }
+
+    /* Custom Count Input Button */
+    .custom-count-btn {
+        background-color: #8e7f71;
+        color: #ffffff;
+        border: none;
+    }
+
+    /* Style Adjustments */
+    h6, h3 {
+        color: #5e5b52;
+    }
+
+    .text-warning {
+        color: #b38b67 !important;
+    }
+
+    .badge {
+        background-color: #8e7f71;
+        color: #ffffff;
+    }
+
+    /* Add hover effects for buttons */
+    .btn-outline-primary {
+        border-color: #8e7f71;
+        color: #8e7f71;
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #8e7f71;
+            color: #ffffff;
+            border-color: #8e7f71;
+        }
+</style>

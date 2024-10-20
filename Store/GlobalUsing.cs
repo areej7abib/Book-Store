@@ -1,0 +1,13 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Ecommerce.DataAccess.Data;
+global using E_commerce.DataAccess.Repository.IRepository;
+global using E_commerce.DataAccess.Repository;
+global using Microsoft.AspNetCore.Identity;
+global using E_commerce.utility;
+global using Microsoft.AspNetCore.Identity.UI.Services;
+global using E_Commerce.Models;
+global using E_Commerce.Models.ViewModels;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc.Rendering;
+global using Microsoft.AspNetCore.Mvc;
+global using System.Diagnostics;
